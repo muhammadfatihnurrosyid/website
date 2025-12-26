@@ -169,6 +169,63 @@
         }
 
     </style>
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Top Button</title>
+    <style>
+        /* Styling untuk tombol scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #0B3D91;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 24px;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #faca3b;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.5);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        /* Animasi arrow */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Demo content untuk testing */
+        .demo-content {
+            height: 200vh;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+    </style>
+
 </head>
 
 
@@ -515,7 +572,7 @@
                     <a href="https://www.linkedin.com/in/muhammadfatihnurrosyid" class="flex items-center justify-center w-14 h-14 rounded-full contact-btn hover:scale-110 transition-all duration-300">
                         <i class="fab fa-linkedin text-xl"></i>
                     </a>
-                    <a href="#" class="flex items-center justify-center w-14 h-14 rounded-full contact-btn hover:scale-110 transition-all duration-300">
+                    <a href="https://github.com/muhammadfatihnurrosyid" class="flex items-center justify-center w-14 h-14 rounded-full contact-btn hover:scale-110 transition-all duration-300">
                         <i class="fab fa-github text-xl"></i>
                     </a>
                     <a href="https://www.instagram.com/fatnr_16/" class="flex items-center justify-center w-14 h-14 rounded-full contact-btn hover:scale-110 transition-all duration-300">
@@ -545,13 +602,13 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Kategori</h4>
                     <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white transition">Web Development</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition">Mobile Development</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition">UI/UX Design</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition">Mechatronics</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition">Industrial Maintenance</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition">Mechanical Engineering</a>
                         <a href="#" class="block text-gray-400 hover:text-white transition">Technology</a>
                     </div>
                 </div>
-                                
+
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <div class="space-y-2">
@@ -616,5 +673,35 @@
             }
         });
     </script>
+
+    <!-- Tombol Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Ambil elemen tombol
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Fungsi untuk menampilkan/menyembunyikan tombol
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Fungsi untuk scroll ke atas dengan smooth animation
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
 </body>
 </html>
